@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index # Функция отвечающая на обработку главной страницы.
-  
+    @post = Post.all
   end
 
   def new
