@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def about
-    @pages = 'Hello world'
+    @pages = 'Новый YogaBlog'
   end
 end
