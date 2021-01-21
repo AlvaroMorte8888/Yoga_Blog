@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
+  def edit # вызывается когда мы переходим на редактирование постов.
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = Post.new(post_params)
     
