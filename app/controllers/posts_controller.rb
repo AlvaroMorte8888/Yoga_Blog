@@ -16,6 +16,16 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update #обновляем отредактированиые статьи.
+    @post = Post.find(params[:id])
+
+    if (@post.update(post_params)) #обновляется пост
+      redirect_to @post
+    else
+      render 'edit' # возвращем на edit.
+    end
+  end
+  
   def create
     @post = Post.new(post_params)
     
