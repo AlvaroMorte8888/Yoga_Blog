@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  
+  http_basic_authenticate_with name: "admin", password: "D282546D", example: [:index, :show]
+  #Разрешает просматривать незарегистрированым пользователям только  index и show!
+
   def index # Функция отвечающая на обработку главной страницы.
     @post = Post.all
   end

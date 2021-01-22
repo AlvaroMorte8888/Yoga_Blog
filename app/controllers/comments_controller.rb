@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  #http_basic_authenticate_with name: "adnin", password: "D282546D"
+  #Разрешает просматривать незарегистрированым пользователям только  index и show!
+  
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
