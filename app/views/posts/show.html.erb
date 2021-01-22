@@ -5,9 +5,17 @@
 <%= link_to "Удалить", post_path(@post), method: :delete, data:{confirm: "Хотите удалить статью"}, :class => 'btn btn-danger' %>
 <br>
 <br>
-<br>
-<br>
-<h2>Коментарии</h2>
+<hr>
+<h1>Все коментарии</h1>
+<% @post.comments.each do |comment|%>
+  <div class='alert alert-light'>
+    <p><strong><%= comment.username %></strong>: <%= comment.body%></p>
+  </div>
+  <br>
+  <hr>
+<% end %>  
+<hr>
+<h2>Добавить коментарий</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
   <p>
